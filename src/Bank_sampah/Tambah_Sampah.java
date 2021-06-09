@@ -2,7 +2,8 @@
 package Bank_sampah;
 
 import javax.swing.JOptionPane;
-
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 /**
  *
  * @author RianS
@@ -274,7 +275,7 @@ public class Tambah_Sampah extends javax.swing.JDialog {
             PreparedStatement ps;
             ResultSet rs;
             try {
-                // cara memakai koneksi ?
+                // memasukan query insert ke database
                 String selectQuery = "INSERT INTO table_name (nama kolom,...) VALUES ("+ tambah_KodeSampah.getText()+","+tambah_Harga.getText()+","+tambah_JenisSampah.getText()+","+tambah_Pengepul.getText()+")";
                 ps = Koneksi.getConnection().prepareStatement(selectQuery);
                 rs = ps.executeQuery(selectQuery);
