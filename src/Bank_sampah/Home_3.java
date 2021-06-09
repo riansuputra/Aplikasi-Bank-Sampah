@@ -1,6 +1,10 @@
 
 package Bank_sampah;
 
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Font;
+import java.awt.font.TextAttribute;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -340,8 +344,33 @@ public class Home_3 extends javax.swing.JFrame {
 
     private void jButton_LoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_LoginMouseEntered
        
-    }//GEN-LAST:event_jButton_LoginMouseEntered
+    }
+    // empat fungsi terakhir untuk menambahkan efek pada komponen tombol dan juga label
+    private void jButton_LoginMouseEntered(java.awt.event.MouseEvent evt) {                                           
+        jButton_Login.setForeground(Color.YELLOW);
+        jButton_Login.setBorder(BorderFactory.createLineBorder(Color.YELLOW));       
+    }                                          
 
+    private void jLabel_toSignUpMouseEntered(java.awt.event.MouseEvent evt) {                                             
+            Font font = jLabel_toSignUp.getFont();
+            HashMap<TextAttribute, Object> attributes = new HashMap<>();
+            attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+            jLabel_toSignUp.setFont(font.deriveFont(attributes));
+            jLabel_toSignUp.setForeground(Color.YELLOW);
+            jLabel_toSignUp.setCursor( Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+    }                                            
+
+    private void jLabel_toSignUpMouseExited(java.awt.event.MouseEvent evt) {                                            
+        Font labelFont = new Font("Segoe UI", Font.BOLD,14);    
+        jLabel_toSignUp.setFont(labelFont);
+        jLabel_toSignUp.setForeground(Color.WHITE);
+    }                                           
+
+    private void jButton_LoginMouseExited(java.awt.event.MouseEvent evt) {                                          
+        jButton_Login.setForeground(Color.WHITE);
+        jButton_Login.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+    }   
+    
     /**
      * @param args the command line arguments
      */
