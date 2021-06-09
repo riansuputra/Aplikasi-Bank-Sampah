@@ -264,12 +264,24 @@ public class Tambah_Sampah extends javax.swing.JDialog {
     }//GEN-LAST:event_tambah_HargaActionPerformed
 
     private void btn_simpanSampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpanSampahActionPerformed
-        if (this.tambah_KodeSampah.getText().length() == 0
-                || this.tambah_Harga.getText().length() == 0
-                || this.tambah_JenisSampah.getText().length() == 0
-                || this.tambah_Pengepul.getText().length() == 0) {
+        if (this.tambah_KodeSampah.getText().length() == 1
+                || this.tambah_Harga.getText().length() == 1
+                || this.tambah_JenisSampah.getText().length() == 1
+                || this.tambah_Pengepul.getText().length() == 1) {
             JOptionPane.showMessageDialog (
                    this, "Mohon diisi semua", "INFO", JOptionPane.WARNING_MESSAGE);
+        } else {
+            PreparedStatement ps;
+            ResultSet rs;
+            try {
+                // cara memakai koneksi ?
+                String selectQuery = "INSERT INTO table_name (nama kolom,...) VALUES ("+ tambah_KodeSampah.getText()+","+tambah_Harga.getText()+","+tambah_JenisSampah.getText()+","+tambah_Pengepul.getText()+")";
+                ps = Koneksi.getConnection().prepareStatement(selectQuery);
+                rs = ps.executeQuery(selectQuery);
+            }catch(Exception ex){
+                JOptionPane.showMessageDialog (
+                this, "Terjadi Kesalahan", "Error", JOptionPane.WARNING_MESSAGE);
+            }
         }
     }//GEN-LAST:event_btn_simpanSampahActionPerformed
 
