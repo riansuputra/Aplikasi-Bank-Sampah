@@ -6,7 +6,8 @@
 package Bank_sampah;
 
 import javax.swing.JOptionPane;
-
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 /**
  *
  * @author RianS
@@ -267,14 +268,28 @@ public class Edit_Sampah extends javax.swing.JDialog {
     private void txtPengepulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPengepulActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPengepulActionPerformed
-
+    
+   //menambahkan fitur edit sampah
     private void btn_simpanSampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpanSampahActionPerformed
-        if (this.edit_KodeSampah.getText().length() == 0
-            || this.edit_Harga.getText().length() == 0
-            || this.edit_JenisSampah.getText().length() == 0
-            || this.txtPengepul.getText().length() == 0) {
+         if (this.edit_KodeSampah.getText().length() == 1
+            || this.edit_Harga.getText().length() == 1
+            || this.edit_JenisSampah.getText().length() == 1
+            || this.txtPengepul.getText().length() == 1) {
             JOptionPane.showMessageDialog (
                 this, "Mohon diisi semua", "INFO", JOptionPane.WARNING_MESSAGE);
+        }else {
+            char petik = 39;   
+             //memasukan query update kedalam database
+            this.query = "update <nama_tabel> set kode_sampah = "+edit_KodeSampah.getText()+", harga_sampah = "+petik+edit_Harga.getText()+petik+", jenis_sampah = "+petik+edit_JenisSampah.getText()+petik+",pengepul = "+txtPengepul.getText()+" where id_sampah = "+Main.id_sampah;
+            try {
+                ps = Koneksi.getConnection().prepareStatement(query);
+                rs = ps.executeQuery(query);
+                JOptionPane.showMessageDialog (
+                this, "Data berhasil diupdate !","Berhasil", JOptionPane.INFORMATION_MESSAGE);
+            }catch(Exception ex) {
+                JOptionPane.showMessageDialog (
+                this, "Terjadi Kesalahan","Kesalahan", JOptionPane.WARNING_MESSAGE);
+            }
         }
     }//GEN-LAST:event_btn_simpanSampahActionPerformed
 
