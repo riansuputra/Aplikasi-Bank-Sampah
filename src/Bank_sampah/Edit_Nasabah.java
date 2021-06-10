@@ -93,7 +93,7 @@ public class Edit_Nasabah extends javax.swing.JDialog {
         jLabel3.setForeground(new java.awt.Color(0, 102, 0));
         jLabel3.setText("ID Nasabah");
 
-        edit_IdNasabah.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        edit_IdNasabah.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         edit_IdNasabah.setForeground(new java.awt.Color(0, 102, 0));
         edit_IdNasabah.setText(" ");
         edit_IdNasabah.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,7 @@ public class Edit_Nasabah extends javax.swing.JDialog {
         jLabel5.setForeground(new java.awt.Color(0, 102, 0));
         jLabel5.setText("Nama Nasabah");
 
-        edit_namaNasabah.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        edit_namaNasabah.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         edit_namaNasabah.setForeground(new java.awt.Color(0, 102, 0));
         edit_namaNasabah.setText(" ");
         edit_namaNasabah.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +119,7 @@ public class Edit_Nasabah extends javax.swing.JDialog {
         jLabel6.setForeground(new java.awt.Color(0, 102, 0));
         jLabel6.setText("Alamat");
 
-        edit_Alamat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        edit_Alamat.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         edit_Alamat.setForeground(new java.awt.Color(0, 102, 0));
         edit_Alamat.setText(" ");
         edit_Alamat.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +132,7 @@ public class Edit_Nasabah extends javax.swing.JDialog {
         jLabel4.setForeground(new java.awt.Color(0, 102, 0));
         jLabel4.setText("No. Telepon");
 
-        edit_noTelepon.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        edit_noTelepon.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         edit_noTelepon.setForeground(new java.awt.Color(0, 102, 0));
         edit_noTelepon.setText(" ");
         edit_noTelepon.addActionListener(new java.awt.event.ActionListener() {
@@ -257,9 +257,28 @@ public class Edit_Nasabah extends javax.swing.JDialog {
             || this.edit_Alamat.getText().length() == 0
             || this.edit_namaNasabah.getText().length() == 0
             || this.edit_noTelepon.getText().length() == 0) {
+            
             JOptionPane.showMessageDialog (
                 this, "Mohon diisi semua", "INFO", JOptionPane.WARNING_MESSAGE);
+        } else {
+            Query s = new Query();
+            s.setId_nasabah(this.edit_IdNasabah.getText());
+            s.setNama_nasabah(this.edit_namaNasabah.getText());
+            s.setAlamat_nasabah(this.edit_Alamat.getText());
+            s.setNomor_Telp_nasabah(this.edit_noTelepon.getText());
+            
+            if (Fungsi.updateNasabah(s)) {
+                
+                Fungsi.Tabel_nasabah("");
+                JOptionPane.showMessageDialog(this, 
+                        "Nasabah Berhasil Diperbaharui", "Information", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, 
+                        "Nasabah Gagal Diperbaharui", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
         }
+        this.dispose();
     }//GEN-LAST:event_btn_simpanEditNasabahActionPerformed
 
     /**
@@ -306,10 +325,10 @@ public class Edit_Nasabah extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_simpanEditNasabah;
-    private javax.swing.JTextField edit_Alamat;
-    private javax.swing.JTextField edit_IdNasabah;
-    private javax.swing.JTextField edit_namaNasabah;
-    private javax.swing.JTextField edit_noTelepon;
+    public static javax.swing.JTextField edit_Alamat;
+    public static javax.swing.JTextField edit_IdNasabah;
+    public static javax.swing.JTextField edit_namaNasabah;
+    public static javax.swing.JTextField edit_noTelepon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

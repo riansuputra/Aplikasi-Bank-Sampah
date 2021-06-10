@@ -6,8 +6,7 @@
 package Bank_sampah;
 
 import javax.swing.JOptionPane;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 /**
  *
  * @author RianS
@@ -43,7 +42,7 @@ public class Edit_Sampah extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         edit_Harga = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        txtPengepul = new javax.swing.JTextField();
+        edit_Pengepul = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         cbKategori = new javax.swing.JComboBox<>();
         btn_simpanSampah = new javax.swing.JButton();
@@ -96,7 +95,7 @@ public class Edit_Sampah extends javax.swing.JDialog {
         jLabel3.setForeground(new java.awt.Color(0, 102, 0));
         jLabel3.setText("Kode Sampah");
 
-        edit_KodeSampah.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        edit_KodeSampah.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         edit_KodeSampah.setForeground(new java.awt.Color(0, 102, 0));
         edit_KodeSampah.setText(" ");
         edit_KodeSampah.addActionListener(new java.awt.event.ActionListener() {
@@ -107,9 +106,9 @@ public class Edit_Sampah extends javax.swing.JDialog {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel5.setText("Jenis Sampah");
+        jLabel5.setText("Nama Sampah");
 
-        edit_JenisSampah.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        edit_JenisSampah.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         edit_JenisSampah.setForeground(new java.awt.Color(0, 102, 0));
         edit_JenisSampah.setText(" ");
         edit_JenisSampah.addActionListener(new java.awt.event.ActionListener() {
@@ -122,7 +121,7 @@ public class Edit_Sampah extends javax.swing.JDialog {
         jLabel6.setForeground(new java.awt.Color(0, 102, 0));
         jLabel6.setText("Harga (Rp)");
 
-        edit_Harga.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        edit_Harga.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         edit_Harga.setForeground(new java.awt.Color(0, 102, 0));
         edit_Harga.setText(" ");
         edit_Harga.addActionListener(new java.awt.event.ActionListener() {
@@ -135,12 +134,12 @@ public class Edit_Sampah extends javax.swing.JDialog {
         jLabel4.setForeground(new java.awt.Color(0, 102, 0));
         jLabel4.setText("Harga ke Pengepul (Rp)");
 
-        txtPengepul.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        txtPengepul.setForeground(new java.awt.Color(0, 102, 0));
-        txtPengepul.setText(" ");
-        txtPengepul.addActionListener(new java.awt.event.ActionListener() {
+        edit_Pengepul.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        edit_Pengepul.setForeground(new java.awt.Color(0, 102, 0));
+        edit_Pengepul.setText(" ");
+        edit_Pengepul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtPengepulActionPerformed(evt);
+                edit_PengepulActionPerformed(evt);
             }
         });
 
@@ -148,7 +147,7 @@ public class Edit_Sampah extends javax.swing.JDialog {
         jLabel7.setForeground(new java.awt.Color(0, 102, 0));
         jLabel7.setText("Kategori");
 
-        cbKategori.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        cbKategori.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         cbKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Plastik", "Logam", "Kertas", "Botol Kaca", "Elektronik" }));
         cbKategori.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -175,7 +174,7 @@ public class Edit_Sampah extends javax.swing.JDialog {
                     .addComponent(cbKategori, 0, 350, Short.MAX_VALUE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel4)
-                    .addComponent(txtPengepul)
+                    .addComponent(edit_Pengepul)
                     .addComponent(jLabel6)
                     .addComponent(edit_Harga)
                     .addComponent(jLabel3)
@@ -210,7 +209,7 @@ public class Edit_Sampah extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtPengepul, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(edit_Pengepul, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(btn_simpanSampah, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(51, Short.MAX_VALUE))
@@ -265,32 +264,58 @@ public class Edit_Sampah extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_edit_HargaActionPerformed
 
-    private void txtPengepulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPengepulActionPerformed
+    private void edit_PengepulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edit_PengepulActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtPengepulActionPerformed
-    
-   //menambahkan fitur edit sampah
+    }//GEN-LAST:event_edit_PengepulActionPerformed
+
     private void btn_simpanSampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpanSampahActionPerformed
-         if (this.edit_KodeSampah.getText().length() == 1
-            || this.edit_Harga.getText().length() == 1
-            || this.edit_JenisSampah.getText().length() == 1
-            || this.txtPengepul.getText().length() == 1) {
-            JOptionPane.showMessageDialog (
-                this, "Mohon diisi semua", "INFO", JOptionPane.WARNING_MESSAGE);
-        }else {
-            char petik = 39;   
-             //memasukan query update kedalam database
-            this.query = "update <nama_tabel> set kode_sampah = "+edit_KodeSampah.getText()+", harga_sampah = "+petik+edit_Harga.getText()+petik+", jenis_sampah = "+petik+edit_JenisSampah.getText()+petik+",pengepul = "+txtPengepul.getText()+" where id_sampah = "+Main.id_sampah;
-            try {
-                ps = Koneksi.getConnection().prepareStatement(query);
-                rs = ps.executeQuery(query);
-                JOptionPane.showMessageDialog (
-                this, "Data berhasil diupdate !","Berhasil", JOptionPane.INFORMATION_MESSAGE);
-            }catch(Exception ex) {
-                JOptionPane.showMessageDialog (
-                this, "Terjadi Kesalahan","Kesalahan", JOptionPane.WARNING_MESSAGE);
-            }
+        String kategori = null;
+        int i = cbKategori.getSelectedIndex();
+        switch (i) {
+            case 0:
+                kategori = "Plastik";
+                break;
+            case 1:
+                kategori = "Logam";
+                break;
+            case 2:
+                kategori = "Kertas";
+                break;
+            case 3:
+                kategori = "Botol";
+                break;
+            case 4:
+                kategori = "Elektronik";
+                break;
         }
+        
+        if (this.edit_KodeSampah.getText().length() == 0
+                || this.edit_Harga.getText().length() == 0
+                || this.edit_JenisSampah.getText().length() == 0
+                || this.edit_Pengepul.getText().length() == 0) {
+            JOptionPane.showMessageDialog (
+                   this, "Mohon diisi semua", "INFO", JOptionPane.WARNING_MESSAGE);
+        } else {
+            Query s = new Query();
+            s.setId_sampah(this.edit_KodeSampah.getText());
+            s.setKategori(kategori);
+            s.setNama_sampah(this.edit_JenisSampah.getText());
+            s.setHarga(this.edit_Harga.getText());
+            s.setHarga_Pengepul(this.edit_Pengepul.getText());
+            s.setStok("0");
+            
+            if (Fungsi.createSampah(s)) {
+                Fungsi.Tabel_sampah("");
+                
+                JOptionPane.showMessageDialog(this, 
+                        "Tambah Sampah Berhasil", "Information", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, 
+                        "Tambah Sampah Gagal", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
+        }
+        this.dispose();
     }//GEN-LAST:event_btn_simpanSampahActionPerformed
 
     /**
@@ -337,10 +362,11 @@ public class Edit_Sampah extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_simpanSampah;
-    private javax.swing.JComboBox<String> cbKategori;
-    private javax.swing.JTextField edit_Harga;
-    private javax.swing.JTextField edit_JenisSampah;
-    private javax.swing.JTextField edit_KodeSampah;
+    public static javax.swing.JComboBox<String> cbKategori;
+    public static javax.swing.JTextField edit_Harga;
+    public static javax.swing.JTextField edit_JenisSampah;
+    public static javax.swing.JTextField edit_KodeSampah;
+    public static javax.swing.JTextField edit_Pengepul;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -351,6 +377,5 @@ public class Edit_Sampah extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField txtPengepul;
     // End of variables declaration//GEN-END:variables
 }

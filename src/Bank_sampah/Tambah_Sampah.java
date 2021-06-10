@@ -2,8 +2,7 @@
 package Bank_sampah;
 
 import javax.swing.JOptionPane;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 /**
  *
  * @author RianS
@@ -35,7 +34,7 @@ public class Tambah_Sampah extends javax.swing.JDialog {
         jLabel3 = new javax.swing.JLabel();
         tambah_KodeSampah = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        tambah_JenisSampah = new javax.swing.JTextField();
+        tambah_NamaSampah = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         tambah_Harga = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
@@ -92,7 +91,7 @@ public class Tambah_Sampah extends javax.swing.JDialog {
         jLabel3.setForeground(new java.awt.Color(0, 102, 0));
         jLabel3.setText("Kode Sampah");
 
-        tambah_KodeSampah.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tambah_KodeSampah.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         tambah_KodeSampah.setForeground(new java.awt.Color(0, 102, 0));
         tambah_KodeSampah.setText(" ");
         tambah_KodeSampah.addActionListener(new java.awt.event.ActionListener() {
@@ -103,14 +102,14 @@ public class Tambah_Sampah extends javax.swing.JDialog {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel5.setText("Jenis Sampah");
+        jLabel5.setText("Nama Sampah");
 
-        tambah_JenisSampah.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        tambah_JenisSampah.setForeground(new java.awt.Color(0, 102, 0));
-        tambah_JenisSampah.setText(" ");
-        tambah_JenisSampah.addActionListener(new java.awt.event.ActionListener() {
+        tambah_NamaSampah.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        tambah_NamaSampah.setForeground(new java.awt.Color(0, 102, 0));
+        tambah_NamaSampah.setText(" ");
+        tambah_NamaSampah.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tambah_JenisSampahActionPerformed(evt);
+                tambah_NamaSampahActionPerformed(evt);
             }
         });
 
@@ -118,7 +117,7 @@ public class Tambah_Sampah extends javax.swing.JDialog {
         jLabel6.setForeground(new java.awt.Color(0, 102, 0));
         jLabel6.setText("Harga (Rp)");
 
-        tambah_Harga.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tambah_Harga.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         tambah_Harga.setForeground(new java.awt.Color(0, 102, 0));
         tambah_Harga.setText(" ");
         tambah_Harga.addActionListener(new java.awt.event.ActionListener() {
@@ -131,7 +130,7 @@ public class Tambah_Sampah extends javax.swing.JDialog {
         jLabel4.setForeground(new java.awt.Color(0, 102, 0));
         jLabel4.setText("Harga ke Pengepul (Rp)");
 
-        tambah_Pengepul.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tambah_Pengepul.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         tambah_Pengepul.setForeground(new java.awt.Color(0, 102, 0));
         tambah_Pengepul.setText(" ");
         tambah_Pengepul.addActionListener(new java.awt.event.ActionListener() {
@@ -144,7 +143,7 @@ public class Tambah_Sampah extends javax.swing.JDialog {
         jLabel7.setForeground(new java.awt.Color(0, 102, 0));
         jLabel7.setText("Kategori");
 
-        cbKategori.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        cbKategori.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         cbKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Plastik", "Logam", "Kertas", "Botol Kaca", "Elektronik" }));
         cbKategori.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -177,7 +176,7 @@ public class Tambah_Sampah extends javax.swing.JDialog {
                     .addComponent(jLabel3)
                     .addComponent(tambah_KodeSampah)
                     .addComponent(jLabel5)
-                    .addComponent(tambah_JenisSampah))
+                    .addComponent(tambah_NamaSampah))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(81, Short.MAX_VALUE)
@@ -198,7 +197,7 @@ public class Tambah_Sampah extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tambah_JenisSampah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tambah_NamaSampah, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -256,34 +255,62 @@ public class Tambah_Sampah extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_tambah_PengepulActionPerformed
 
-    private void tambah_JenisSampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambah_JenisSampahActionPerformed
+    private void tambah_NamaSampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambah_NamaSampahActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tambah_JenisSampahActionPerformed
+    }//GEN-LAST:event_tambah_NamaSampahActionPerformed
 
     private void tambah_HargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tambah_HargaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tambah_HargaActionPerformed
 
     private void btn_simpanSampahActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpanSampahActionPerformed
-        if (this.tambah_KodeSampah.getText().length() == 1
-                || this.tambah_Harga.getText().length() == 1
-                || this.tambah_JenisSampah.getText().length() == 1
-                || this.tambah_Pengepul.getText().length() == 1) {
+        String kategori = null;
+        int i = cbKategori.getSelectedIndex();
+        switch (i) {
+            case 0:
+                kategori = "Plastik";
+                break;
+            case 1:
+                kategori = "Logam";
+                break;
+            case 2:
+                kategori = "Kertas";
+                break;
+            case 3:
+                kategori = "Botol";
+                break;
+            case 4:
+                kategori = "Elektronik";
+                break;
+        }
+        
+        if (this.tambah_KodeSampah.getText().length() == 0
+                || this.tambah_Harga.getText().length() == 0
+                || this.tambah_NamaSampah.getText().length() == 0
+                || this.tambah_Pengepul.getText().length() == 0) {
             JOptionPane.showMessageDialog (
                    this, "Mohon diisi semua", "INFO", JOptionPane.WARNING_MESSAGE);
         } else {
-            PreparedStatement ps;
-            ResultSet rs;
-            try {
-                // memasukan query insert ke database
-                String selectQuery = "INSERT INTO table_name (nama kolom,...) VALUES ("+ tambah_KodeSampah.getText()+","+tambah_Harga.getText()+","+tambah_JenisSampah.getText()+","+tambah_Pengepul.getText()+")";
-                ps = Koneksi.getConnection().prepareStatement(selectQuery);
-                rs = ps.executeQuery(selectQuery);
-            }catch(Exception ex){
-                JOptionPane.showMessageDialog (
-                this, "Terjadi Kesalahan", "Error", JOptionPane.WARNING_MESSAGE);
+            Query s = new Query();
+            s.setId_sampah(this.tambah_KodeSampah.getText());
+            s.setKategori(kategori);
+            s.setNama_sampah(this.tambah_NamaSampah.getText());
+            s.setHarga(this.tambah_Harga.getText());
+            s.setHarga_Pengepul(this.tambah_Pengepul.getText());
+            s.setStok("0");
+            
+            if (Fungsi.createSampah(s)) {
+                Fungsi.Tabel_sampah("");
+                
+                JOptionPane.showMessageDialog(this, 
+                        "Tambah Sampah Berhasil", "Information", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, 
+                        "Tambah Sampah Gagal", "Error", JOptionPane.ERROR_MESSAGE);
             }
+            
         }
+        this.dispose();
     }//GEN-LAST:event_btn_simpanSampahActionPerformed
 
     /**
@@ -342,8 +369,8 @@ public class Tambah_Sampah extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField tambah_Harga;
-    private javax.swing.JTextField tambah_JenisSampah;
     private javax.swing.JTextField tambah_KodeSampah;
+    private javax.swing.JTextField tambah_NamaSampah;
     private javax.swing.JTextField tambah_Pengepul;
     // End of variables declaration//GEN-END:variables
 }

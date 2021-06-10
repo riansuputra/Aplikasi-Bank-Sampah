@@ -37,12 +37,12 @@ public class Query {
             + "total_harga)"
             + "VALUES(?,?,?,?,?,?,?)";
     public static String daftar_penarikan = "INSERT INTO tb_penarikan("
-            + "tanggal_penarikan,"
             + "id_nasabah,"
+            + "tanggal_penarikan,"
             + "saldo_penarikan)"
             + "VALUES(?,?,?)";
     public static String daftar_saldo = "INSERT INTO tb_saldo("
-            + "tgl_simpah,"
+            + "tgl_simpan,"
             + "id_nasabah,"
             + "id_sampah,"
             + "nama_sampah,"
@@ -50,32 +50,10 @@ public class Query {
             + "jumlah_sampah,"
             + "total_sampah)"
             + "VALUES(?,?,?,?,?,?,?)";
-    public static String daftar_simpanan = "INSERT INTO tb_saldo("
-            + "tgl_simpah,"
-            + "id_nasabah,"
-            + "id_sampah,"
-            + "nama_sampah,"
-            + "harga_sampah,"
-            + "jumlah_sampah,"
-            + "total_sampah)"
-            + "VALUES(?,?,?,?,?,?,?)";
-    
+        
     //Query Update
-    public static String update_nasabah = "UPDATE tb_nasabah SET("
-            + "id_nasabah,"
-            + "nama_nasabah,"
-            + "alamat,"
-            + "nomor_telp,"
-            + "saldo_nasabah)"
-            + "WHERE id_nasabah = ?";
-    public static String update_sampah = "UPDATE tb_sampah SET("
-            + "id_sampah,"
-            + "kategori,"
-            + "nama_sampah,"
-            + "harga,"
-            + "harga_pengepul,"
-            + "stok)"
-            + "WHERE id_sampah = ?";
+    public static String update_nasabah = "CALL UpdateNasabah(?,?,?,?)";
+    public static String update_sampah = "CALL UpdateSampah(?,?,?,?)";
     public static String update_user = "UPDATE tb_user SET("
             + "username,"
             + "password)"

@@ -89,7 +89,7 @@ public class Tambah_Nasabah extends javax.swing.JDialog {
         jLabel3.setForeground(new java.awt.Color(0, 102, 0));
         jLabel3.setText("ID Nasabah");
 
-        tambah_IdNasabah.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tambah_IdNasabah.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         tambah_IdNasabah.setForeground(new java.awt.Color(0, 102, 0));
         tambah_IdNasabah.setText(" ");
         tambah_IdNasabah.addActionListener(new java.awt.event.ActionListener() {
@@ -102,7 +102,7 @@ public class Tambah_Nasabah extends javax.swing.JDialog {
         jLabel5.setForeground(new java.awt.Color(0, 102, 0));
         jLabel5.setText("Nama Nasabah");
 
-        tambah_namaNasabah.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tambah_namaNasabah.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         tambah_namaNasabah.setForeground(new java.awt.Color(0, 102, 0));
         tambah_namaNasabah.setText(" ");
         tambah_namaNasabah.addActionListener(new java.awt.event.ActionListener() {
@@ -115,7 +115,7 @@ public class Tambah_Nasabah extends javax.swing.JDialog {
         jLabel6.setForeground(new java.awt.Color(0, 102, 0));
         jLabel6.setText("Alamat");
 
-        tambah_Alamat.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tambah_Alamat.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         tambah_Alamat.setForeground(new java.awt.Color(0, 102, 0));
         tambah_Alamat.setText(" ");
         tambah_Alamat.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +128,7 @@ public class Tambah_Nasabah extends javax.swing.JDialog {
         jLabel4.setForeground(new java.awt.Color(0, 102, 0));
         jLabel4.setText("No. Telepon");
 
-        tambah_noTelepon.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        tambah_noTelepon.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         tambah_noTelepon.setForeground(new java.awt.Color(0, 102, 0));
         tambah_noTelepon.setText(" ");
         tambah_noTelepon.addActionListener(new java.awt.event.ActionListener() {
@@ -255,7 +255,26 @@ public class Tambah_Nasabah extends javax.swing.JDialog {
             || this.tambah_noTelepon.getText().length() == 0) {
             JOptionPane.showMessageDialog (
                 this, "Mohon diisi semua", "INFO", JOptionPane.WARNING_MESSAGE);
+        } else {
+            Query s = new Query();
+            s.setId_nasabah(this.tambah_IdNasabah.getText());
+            s.setNama_nasabah(this.tambah_namaNasabah.getText());
+            s.setAlamat_nasabah(this.tambah_Alamat.getText());
+            s.setNomor_Telp_nasabah(this.tambah_noTelepon.getText());
+            s.setSaldo_nasabah("0");
+            
+            if (Fungsi.createNasabah(s)) {
+                Fungsi.Tabel_nasabah("");
+                
+                JOptionPane.showMessageDialog(this, 
+                        "Tambah Nasabah Berhasil", "Information", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(this, 
+                        "Tambah Nasabah Gagal", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
         }
+        this.dispose();
     }//GEN-LAST:event_btn_simpanNasabahActionPerformed
 
     /**

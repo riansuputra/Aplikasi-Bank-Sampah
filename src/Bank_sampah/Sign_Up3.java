@@ -1,12 +1,6 @@
 
 package Bank_sampah;
 
-import java.awt.Color;
-import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.font.TextAttribute;
-import java.util.HashMap;
-import javax.swing.BorderFactory;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -380,31 +374,6 @@ public class Sign_Up3 extends javax.swing.JFrame {
         }
        return username_exist;
     }
-    //menambahkan efek pada event mouse enter
-    private void jLabel_toHomeMouseEntered(java.awt.event.MouseEvent evt) {                                           
-            Font font = jLabel_toHome.getFont();
-            HashMap<TextAttribute, Object> attributes = new HashMap<>();
-            attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-            jLabel_toHome.setFont(font.deriveFont(attributes));
-            jLabel_toHome.setForeground(Color.YELLOW);
-            jLabel_toHome.setCursor( Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-    }
-    //menambahkan efek supaya keadaan tombol kembali seperti semula
-    private void jLabel_toHomeMouseExited(java.awt.event.MouseEvent evt) {                                          
-        Font labelFont = new Font("Segoe UI", Font.BOLD,14);    
-        jLabel_toHome.setFont(labelFont);
-        jLabel_toHome.setForeground(Color.WHITE);
-    }                                         
-//menambahkan efek pada event mouse enter
-    private void jButton_SignUpMouseEntered(java.awt.event.MouseEvent evt) {                                            
-        jButton_SignUp.setForeground(Color.YELLOW);
-        jButton_SignUp.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
-    }                                           
-//menambahkan efek supaya keadaan tombol kembali seperti semula
-    private void jButton_SignUpMouseExited(java.awt.event.MouseEvent evt) {                                           
-        jButton_SignUp.setForeground(Color.WHITE);
-        jButton_SignUp.setBorder(BorderFactory.createLineBorder(Color.WHITE));
-    }   
     
     /**
      * @param args the command line arguments

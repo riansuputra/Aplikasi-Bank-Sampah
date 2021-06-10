@@ -5,6 +5,11 @@
  */
 package Bank_sampah;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -30,27 +35,27 @@ public class Ganti_Password extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        btn_masukSetting = new javax.swing.JButton();
-        jPasswordField_LoginSetting = new javax.swing.JPasswordField();
-        jLabel7 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        btn_simpan = new javax.swing.JButton();
+        jTextField_Username = new javax.swing.JTextField();
+        jLabel_tmpUsername = new javax.swing.JLabel();
+        jPasswordField = new javax.swing.JPasswordField();
+        jLabel_tmpPassword = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 0), 3, true));
-
-        jPanel2.setBackground(new java.awt.Color(0, 102, 0));
+        jPanel2.setBackground(new java.awt.Color(255, 51, 0));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.setPreferredSize(new java.awt.Dimension(206, 40));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Masukkan Password");
+        jLabel1.setText("Ganti Password");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -69,119 +74,92 @@ public class Ganti_Password extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addComponent(jLabel2)
-                .addGap(15, 15, 15))
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel3.setBackground(new java.awt.Color(116, 203, 0));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 290, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Mohon Masukkan Password Anda Sebelumnya");
+        jPanel1.setBackground(new java.awt.Color(116, 203, 0));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        btn_masukSetting.setBackground(new java.awt.Color(0, 102, 0));
-        btn_masukSetting.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btn_masukSetting.setForeground(new java.awt.Color(0, 102, 0));
-        btn_masukSetting.setText("MASUK");
-        btn_masukSetting.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0), 3));
-        btn_masukSetting.setContentAreaFilled(false);
-        btn_masukSetting.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_masukSetting.addActionListener(new java.awt.event.ActionListener() {
+        btn_simpan.setBackground(new java.awt.Color(0, 102, 0));
+        btn_simpan.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btn_simpan.setForeground(new java.awt.Color(0, 102, 0));
+        btn_simpan.setText("SIMPAN");
+        btn_simpan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0), 3));
+        btn_simpan.setContentAreaFilled(false);
+        btn_simpan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_simpan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_masukSettingActionPerformed(evt);
+                btn_simpanActionPerformed(evt);
             }
         });
 
-        jPasswordField_LoginSetting.setBackground(new java.awt.Color(51, 102, 0));
-        jPasswordField_LoginSetting.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jPasswordField_LoginSetting.setForeground(new java.awt.Color(255, 255, 255));
-        jPasswordField_LoginSetting.setText(" Password");
-        jPasswordField_LoginSetting.setBorder(null);
-        jPasswordField_LoginSetting.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jPasswordField_LoginSettingFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                jPasswordField_LoginSettingFocusLost(evt);
-            }
-        });
+        jTextField_Username.setBackground(new java.awt.Color(51, 102, 0));
+        jTextField_Username.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jTextField_Username.setForeground(new java.awt.Color(255, 224, 0));
+        jTextField_Username.setBorder(null);
+        jTextField_Username.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 102, 0));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Sebelum Melakukan Ganti Password");
+        jLabel_tmpUsername.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel_tmpUsername.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_tmpUsername.setText("Username");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jPasswordField_LoginSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(74, 74, 74)
-                        .addComponent(btn_masukSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addGap(30, 30, 30)
-                .addComponent(jPasswordField_LoginSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(btn_masukSetting, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 57, Short.MAX_VALUE))
-        );
+        jPasswordField.setBackground(new java.awt.Color(51, 102, 0));
+        jPasswordField.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jPasswordField.setForeground(new java.awt.Color(255, 224, 0));
+        jPasswordField.setBorder(null);
+        jPasswordField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+
+        jLabel_tmpPassword.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel_tmpPassword.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel_tmpPassword.setText("Password");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 389, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel_tmpUsername)
+                            .addComponent(jLabel_tmpPassword)
+                            .addComponent(jTextField_Username, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                            .addComponent(jPasswordField)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(64, 64, 64)
+                        .addComponent(btn_simpan, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90))
+                .addGap(26, 26, 26)
+                .addComponent(jLabel_tmpUsername)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextField_Username, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel_tmpPassword)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(btn_simpan, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 290, 280));
 
         pack();
         setLocationRelativeTo(null);
@@ -191,40 +169,30 @@ public class Ganti_Password extends javax.swing.JDialog {
         this.dispose();
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void btn_masukSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masukSettingActionPerformed
-        if (Ganti_Password.jPasswordField_LoginSetting.getText().equals(Home_3.jPasswordField_Login.getText())) {
-            Main.jTabbedPane1.setSelectedIndex(4);
-            this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(this, "Maaf Password Anda salah !");
+    private void btn_simpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_simpanActionPerformed
+        if (this.jTextField_Username.getText().length() == 0
+                || this.jPasswordField.getText().length() == 0
+                ) {
+
+            JOptionPane.showMessageDialog(this,
+                    "Tidak Boleh kosong", "INFO", JOptionPane.WARNING_MESSAGE);
+
+        } else{   
+        
+        Query s = new Query();       
+            s.setUsername(jTextField_Username.getText());
+            s.setPassword(jPasswordField.getText());
+            if (Fungsi.updateUser(s)) {
+//                Fungsi.Tabel_User("");
+                JOptionPane.showMessageDialog(this,
+                        "Ganti Password Berhasil !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
+            }else{
+                 JOptionPane.showMessageDialog(this,
+                        "Gagal Ganti Password !", "ERROR", JOptionPane.ERROR_MESSAGE);
+            } 
+           this.dispose();
         }
-    }//GEN-LAST:event_btn_masukSettingActionPerformed
-
-    private void jPasswordField_LoginSettingFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField_LoginSettingFocusGained
-        /*Jika input Password field berisi input kata "Password" maka
-        input sebelumnya ditiadakan*/
-        String pass = String.valueOf(jPasswordField_LoginSetting.getPassword());
-
-        if(pass.trim().equals("Password")) {
-            jPasswordField_LoginSetting.setText("");
-            jPasswordField_LoginSetting.setEchoChar('\u25CF');
-        }
-
-    }//GEN-LAST:event_jPasswordField_LoginSettingFocusGained
-
-    private void jPasswordField_LoginSettingFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jPasswordField_LoginSettingFocusLost
-        /* Jika input password field belum diisi maka akan
-        diset default kata "Password" pada Password field
-        */
-        String pass = String.valueOf(jPasswordField_LoginSetting.getPassword());
-
-        if(pass.trim().equals("") || pass.trim().equals("Password")) {
-            jPasswordField_LoginSetting.setText("Password");
-            jPasswordField_LoginSetting.setEchoChar((char)0);
-        }
-
-    }//GEN-LAST:event_jPasswordField_LoginSettingFocusLost
-
+    }//GEN-LAST:event_btn_simpanActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -268,14 +236,15 @@ public class Ganti_Password extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_masukSetting;
+    private javax.swing.JButton btn_simpan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel_tmpPassword;
+    private javax.swing.JLabel jLabel_tmpUsername;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    public static javax.swing.JPasswordField jPasswordField_LoginSetting;
+    private javax.swing.JPasswordField jPasswordField;
+    private javax.swing.JTextField jTextField_Username;
     // End of variables declaration//GEN-END:variables
+
 }
