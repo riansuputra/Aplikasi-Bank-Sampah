@@ -8,4 +8,8 @@ Anggota Kelompok 12 :
     I Made Rian Suputra (2005551055)
     I Gede Tresna Agung Saputra (2005551139)
     
-Aplikasi bank sampah ini merupakan aplikasi yang diperuntukkan bagi pengelola atau admin dari
+Aplikasi bank sampah ini merupakan aplikasi yang diperuntukkan bagi pengelola atau admin dari tempat pengelolaan bank sampah
+Beberapa Libary yang digunakan pada Aplikasi Bank Sampah ini yaitu :
+jcalender-1.4.jar
+JDBC sql connector
+rs2xml.jar
