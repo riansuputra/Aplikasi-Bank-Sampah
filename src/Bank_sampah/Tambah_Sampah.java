@@ -144,7 +144,7 @@ public class Tambah_Sampah extends javax.swing.JDialog {
         jLabel7.setText("Kategori");
 
         cbKategori.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-        cbKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Plastik", "Logam", "Kertas", "Botol Kaca", "Elektronik" }));
+        cbKategori.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Plastik", "Logam", "Kertas", "Botol Kaca", "Elektronik", "Cairan", "Organik", "An Organik", "Lainnya" }));
         cbKategori.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btn_simpanSampah.setBackground(new java.awt.Color(0, 102, 0));
@@ -281,6 +281,18 @@ public class Tambah_Sampah extends javax.swing.JDialog {
                 break;
             case 4:
                 kategori = "Elektronik";
+                break;
+            case 5:
+                kategori = "Cairan";
+                break;
+            case 6:
+                kategori = "Organik";
+                break;
+            case 7:
+                kategori = "An Organik";
+                break;
+            case 8:
+                kategori = "Lainnya";
                 break;
         }
         

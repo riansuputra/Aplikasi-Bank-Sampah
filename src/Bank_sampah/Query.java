@@ -53,11 +53,7 @@ public class Query {
         
     //Query Update
     public static String update_nasabah = "CALL UpdateNasabah(?,?,?,?)";
-    public static String update_sampah = "CALL UpdateSampah(?,?,?,?)";
-    public static String update_user = "UPDATE tb_user SET("
-            + "username,"
-            + "password)"
-            + "WHERE id_user = ?";
+    public static String update_user = "CALL UpdateUser(?,?,?)";
     
     //Query Select
     public static String select_nasabah = "SELECT * FROM tb_nasabah";

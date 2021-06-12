@@ -184,12 +184,14 @@ public class Ganti_Password extends javax.swing.JDialog {
             s.setPassword(jPasswordField.getText());
             if (Fungsi.updateUser(s)) {
 //                Fungsi.Tabel_User("");
+                Main.passwordUser = jPasswordField.getText();
                 JOptionPane.showMessageDialog(this,
                         "Ganti Password Berhasil !", "INFORMASI", JOptionPane.INFORMATION_MESSAGE);
             }else{
                  JOptionPane.showMessageDialog(this,
                         "Gagal Ganti Password !", "ERROR", JOptionPane.ERROR_MESSAGE);
-            } 
+            }
+            
            this.dispose();
         }
     }//GEN-LAST:event_btn_simpanActionPerformed

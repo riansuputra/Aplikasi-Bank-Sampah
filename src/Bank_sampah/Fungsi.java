@@ -144,34 +144,15 @@ public class Fungsi {
         }
     }
     
-    public static boolean updateSampah(Query s){
-        String sql = Query.update_sampah;
         
-        try{
-            ps = Koneksi.prepareStatement(sql);
-            ps.setString(1, s.getId_sampah());
-            
-            ps.setString(2, s.getNama_sampah());
-            ps.setString(3, s.getHarga());
-            ps.setString(4, s.getHarga_pengepul());
-            
-           
-            ps.executeUpdate();
-            
-            ps.close();
-            return true;
-        } catch (SQLException ex) {
-            return false;
-        }
-    }
-    
     public static boolean updateUser(Query s){
         String sql = Query.update_user;
         
         try{
             ps = Koneksi.prepareStatement(sql);
-            ps.setString(3, s.getUsername());
-            ps.setString(4, s.getPassword());
+            ps.setString(1, Main.idUser);
+            ps.setString(2, s.getUsername());
+            ps.setString(3, s.getPassword());
             
             
             ps.executeUpdate();
@@ -457,23 +438,7 @@ public class Fungsi {
             Statement st = Koneksi.createStatement();
             ResultSet rs = st.executeQuery(sql);
             tabel_laporan.setModel(DbUtils.resultSetToTableModel(rs));
-            /*
-            while (rs.next()) {
-
-                Data[0] = rs.getString("tgl_tabungan");
-                Data[1] = rs.getString("kode");
-                Data[2] = rs.getString("id_nasabah");
-                Data[3] = rs.getString("nama_sampah");
-                Data[4] = rs.getString("id_sampah");
-                Data[5] = rs.getString("harga_sampah");
-                Data[6] = rs.getString("berat_sampah");
-                Data[7] = rs.getString("debet");
-                Data[8] = rs.getString("kredit");
-                Data[9] = rs.getString("penjualan");
-
-                model.addRow(Data);
-
-            }*/
+            
         } catch (SQLException ex) {            
             Logger.getLogger(Fungsi.class.getName()).log(Level.SEVERE, null, ex);
         }

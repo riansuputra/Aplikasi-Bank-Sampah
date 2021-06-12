@@ -13,9 +13,8 @@ import javax.swing.JOptionPane;
  */
 public class Ganti_PasswordConfirm extends javax.swing.JDialog {
 
-    /**
-     * Creates new form Ganti_Password
-     */
+    
+        
     public Ganti_PasswordConfirm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -192,7 +191,8 @@ public class Ganti_PasswordConfirm extends javax.swing.JDialog {
     }//GEN-LAST:event_jLabel2MouseClicked
 
     private void btn_masukSettingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_masukSettingActionPerformed
-        if (Ganti_PasswordConfirm.jPasswordField_LoginSetting.getText().equals(Home_3.jPasswordField_Login.getText())) {
+        
+        if (Ganti_PasswordConfirm.jPasswordField_LoginSetting.getText().equals(Main.passwordUser)) {
             Main.jTabbedPane1.setSelectedIndex(4);
             this.dispose();
         }else{

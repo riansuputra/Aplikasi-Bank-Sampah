@@ -312,6 +312,8 @@ public class Home_3 extends javax.swing.JFrame {
                     Main form = new Main();
                     form.setVisible(true);
                     form.pack();
+                    
+                    Main.idUser = rs.getString("id_user");
                     //close form
                     this.dispose();
                 }else {
